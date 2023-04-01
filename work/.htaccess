@@ -1,0 +1,5 @@
+# Делаем маршрутизацию директории work | Вывода работ за все время
+
+RewriteEngine On
+RewriteBase /work/
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

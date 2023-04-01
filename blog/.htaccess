@@ -1,0 +1,5 @@
+# Делаем маршрутизацию директории blog | Вывода статей блога
+
+RewriteEngine On
+RewriteBase /blog/
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

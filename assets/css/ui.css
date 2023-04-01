@@ -1,0 +1,304 @@
+@font-face {
+	font-weight: 300;
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Light.ttf');
+}
+
+@font-face {
+	font-weight: 400;
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Regular.ttf');
+}
+
+@font-face {
+	font-weight: 600;
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-SemiBold.ttf');
+}
+
+@font-face {
+	font-weight: 400;
+    font-family: 'IBMPlexMono';
+    src: url('../fonts/IBMPlexMono-Regular.ttf');
+}
+
+:root {
+	--main-clr: #000;
+	--main-clr-hov: #abb0b6;
+
+	--secondary-clr: #ffa726;
+	--secondary-clr-hov: #e9971f;
+
+	--body-clr: #ffffff;
+	--text-clr: #000;
+	--text-light-clr: #424850;
+
+	--link-clr: #abb0b6;
+	--link-clr-hov: #000;
+
+	--border-clr: #222;
+	--border-bgrd: #fafafa;
+
+	--cwidth: 640px;
+	--cpadding: 0;
+	
+	--font-size: 16px;
+	--line-height: 1.467;
+}
+
+* {
+	box-sizing: border-box;
+	position: relative;
+}
+
+*::selection {
+    background-color: #fff6c0;
+}
+
+html {
+    width: var(--cwidth);
+	margin: 0 auto;
+	font-size: var(--font-size);
+    overflow-y: scroll;
+}
+
+body {
+	margin: 0;
+    font-family: 'NunitoSans', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: var(--line-height);
+	color: var(--text-clr);
+	background-color: var(--body-clr);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-weight: 400;
+	color: var(--text-clr);
+}
+
+h1,
+.h1 {
+	font-size: 2rem;
+	margin-bottom: 0;
+}
+
+h2,
+.h2 {
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+h3,
+.h3 {
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+h4,
+.h4 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+h5,
+.h5 {
+	font-size: 1rem;
+}
+
+h6,
+.h6 {
+	font-size: 1rem;
+}
+
+*+h1,
+*+.h1,
+*+h2,
+*+.h2,
+*+h3,
+*+.h3,
+*+h4,
+*+.h4,
+*+h5,
+*+.h5,
+*+h6,
+*+.h6 {
+	/* margin-top: 1.5rem; */
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	color: var(--text-light-clr);
+    transition: 300ms;
+}
+
+p strong {
+	color: var(--text-clr);
+}
+
+strong, b {
+	display: inline-block;
+	margin-bottom: 0.25rem;
+}
+
+code {
+	font-family: 'IBMPlexMono', 'NunitoSans', sans-serif;
+	font-size: 14px;
+    width: 100%;
+    position: relative;
+    left: -16px;
+    border-radius: 16px;
+    transition: 300ms;
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	color: var(--text-light-clr);
+    transition: 300ms;
+}
+
+code {
+    display: block;
+    width: calc(100% + 16px);
+    padding: 16px 32px 16px 16px;
+    border-radius: 16px;
+    background-color: #fff6c0;
+}
+code::selection {
+    background-color: #fff;
+}
+
+ol,
+ul {
+	margin-top: 0;
+	margin-bottom: 0.75rem;
+	padding-left: 40px;
+}
+
+ul {
+	list-style-type: disc;
+	padding: 0 0 0 19px;
+}
+
+li {
+	color: var(--text-light-clr);
+}
+
+li::marker {
+	color: #000;
+	font-size: 12px;
+}
+
+a {
+    color: var(--text-light-clr);
+	text-decoration: none;
+    transition: 300ms;
+}
+
+a:hover {
+	/* color: var(--link-clr-hov); */
+}
+
+p a:hover, ul a:hover, ol a:hover {
+	background-color: #fff6c0;
+}
+
+p a, ul a, ol a {
+    border-bottom: 1px dashed #abb0b6;
+}
+
+hr {
+	margin-top: 0.75rem;
+	margin-bottom: calc(0.75rem - 1px);
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+blockquote {
+    padding: 10.5px 21px;
+    margin: 0 0 21px;
+    font-size: 18.75px;
+    border-left: 5px solid #e6e6e6;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+thead {
+	background: #7d92d8;
+	color: #fff;
+	font-weight: 700;
+}
+
+tbody tr {
+	background: #e7ecfb;
+}
+
+tbody tr:nth-child(2n) {
+	background: #c8cfe4;
+}
+
+td,
+th {
+	padding: 12px 48px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.container {
+	width: var(--cwidth);
+	padding: 0 var(--cpadding);
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-between {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.spacer16 {
+	height: 16px;
+}

@@ -1,0 +1,125 @@
+@media (max-width: 767px) {
+    html {
+        padding: 0 20px;
+        width: 100%;
+        max-width: 640px;
+    }
+    .code-box {
+        display: block;
+        width: 100%;
+    }
+    code {
+        max-width: 100%;
+        left: 0;
+    }
+    .listing section {
+        background-color: #fafafa;
+        margin-bottom: 20px;
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+    }
+    .listing section:last-child {
+        margin-bottom: 0;
+    }
+    .listing.works section {
+        border-radius: 0;
+    }
+    .listing.works section > a > img {
+        max-width: CALC(100% + 32px);
+        left: -16px;
+        border-radius: 0;
+    }
+    .listing__header-box {
+        display: block;
+        margin-bottom: 16px;
+    }
+    .listing__header-box h2 {
+        max-width: 100%;
+        overflow: hidden;
+        display: block;
+        white-space: pre;
+        margin-left: 0;
+    }
+    .listing__header-box time {
+        display: none;
+    }
+    .listing__header-box span {
+        display: none;
+    }
+    .listing__h2-time {
+        display: inline;
+    }
+    .listing section {
+
+    }
+    .listing.article section {
+        max-height: 200px;
+        overflow: hidden;
+    }
+    .not-full-size {
+        max-width: 100%;
+        left: 0;
+    }
+    #my_foto img:hover {
+        transform: none;
+    }
+    #my_foto {
+        justify-content: inherit;
+    }
+    #my_foto img {
+        margin-bottom: 0;
+    }
+    .code-box .copy-button {
+        opacity: 1;
+    }
+    html {
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+    .post img {
+        width: 100%;
+    }
+    .spacer16 {
+        /* display: none; */
+    }
+    .toast-message {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        transform: translate(-50%, -50%);
+        background-color: #fff6c0;
+        padding: 5px;
+        border: 1px solid #222;
+        border-radius: 5px;
+        z-index: 5;
+        opacity: 0;
+        animation: fade-in-out 1s ease-in-out;
+    }
+}
+
+@media (max-width: 500px) {
+    h1, .h1 {
+        font-size: 1.5rem;
+    }
+    .not-full-size {
+        padding: 20px 15px 0 15px !important;
+    }
+    .listing__wrapper-short-description {
+        max-height: 192px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 389px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__menu {
+        
+    }
+}
