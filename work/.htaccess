@@ -2,4 +2,5 @@
 
 RewriteEngine On
 RewriteBase /work/
+RewriteCond %{REQUEST_URI} !^/work/discomagic/.*$
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

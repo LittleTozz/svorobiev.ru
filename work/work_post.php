@@ -6,7 +6,7 @@ $url = $_GET['url'];
 
 require_once('../config/db_config.php');
 
-$sql_project = "SELECT work_projects.name, work_projects.content, work_projects.url, work_projects.img, work_projects.img_alt, work_projects.in_active
+$sql_project = "SELECT work_projects.name, work_projects.content, work_projects.url, work_projects.link_in_project, work_projects.img, work_projects.img_alt, work_projects.in_active
         FROM work_projects
         WHERE work_projects.url = '" . $url . "' and work_projects.in_active = '1'";
         
@@ -22,6 +22,9 @@ if (mysqli_num_rows($result_project) > 0) {
         <h1><?php echo $project["name"]; ?></h1>
         <div class="spacer16"></div>
         <p><?php echo $project["content"]; ?></p>
+        <?php
+        if ($project["link_in_project"] != null) echo("<a href='https://svorobiev.ru/work/" . $project["link_in_project"] . "' target='_blank'>Ссылка на проект</a>");
+        ?>
     </div>
 <?php } else {
     header("HTTP/1.0 404 Not Found");
