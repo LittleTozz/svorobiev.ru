@@ -26,7 +26,7 @@ $description = 'Беседую';
             <h2>Свяжитесь со мной</h2>
             <p><a href="https://vk.com/littletoss" target="_blank">ВКонтакте</a></p>
             <p><a href="https://t.me/LittleToss" target="_blank">Telegram</a></p>
-            <p><a href="https://github.com/LittleTozz" target="_blank">GitHub</a></p>
+            <p><a href="https://github.com/sergey-vorobiev" target="_blank">GitHub</a></p>
             <p><a href="tel:89166527688">8 (916) 652 76 88</a></p>
             <p><a href="mailto:geroy2001@gmail.com">geroy2001@gmail.com</a></p>
         </section>
