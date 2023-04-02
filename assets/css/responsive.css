@@ -50,13 +50,6 @@
     .listing__h2-time {
         display: inline;
     }
-    .listing section {
-
-    }
-    .listing.article section {
-        max-height: 200px;
-        overflow: hidden;
-    }
     .not-full-size {
         max-width: 100%;
         left: 0;
@@ -107,10 +100,6 @@
     }
     .not-full-size {
         padding: 20px 15px 0 15px !important;
-    }
-    .listing__wrapper-short-description {
-        max-height: 192px;
-        overflow: hidden;
     }
 }
 

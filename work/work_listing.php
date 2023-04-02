@@ -49,7 +49,26 @@ if (mysqli_num_rows($result_listion) == 0) {
                     <h2><?php echo $row["name"] . " (" . date("Y", $date_year) . ")"; ?></h2>
                 </div>
                 <div class="listing__wrapper-short-description">
-                    <?php echo htmlspecialchars($row["short_description"]); ?>
+                    <?php
+                        // Вывод короткого описания
+                        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+                        $short_description = htmlspecialchars($row["short_description"]);
+                        
+                        $string_without_spaces = str_replace(' ', '', $short_description);
+                        $length = strlen($string_without_spaces);
+
+                        if (strpos($user_agent, 'Mobile')) {
+                            if ($length > 250) {
+                                $short_description = trim(rtrim(mb_substr($short_description, 0, 250, 'UTF-8'), "!,.-")) . '...';
+                                echo ($short_description);
+                            } else {
+                                echo $short_description;
+                            }
+                            
+                        } else {
+                            echo $short_description;
+                        }
+                    ?>
                 </div>
                 <div class="listing__time-work">
                     <time datetime="<?php echo $row["date_start"]; ?>">
