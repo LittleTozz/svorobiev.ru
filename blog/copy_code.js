@@ -7,7 +7,7 @@ for (let i = 0; i < parentCodeBlocks.length; i++) {
 
   // Создаем кнопку "Копировать"
   const copyButton = document.createElement('button');
-  copyButton.innerHTML = '<img src="../assets/img/icons/copy.png" alt="Скопировать">';
+  copyButton.innerHTML = '<img src="../assets/img/icons/copy.png" alt="Скопировать" loading="lazy">';
   copyButton.classList.add('copy-button');
 
   // Добавляем обработчик клика на кнопку

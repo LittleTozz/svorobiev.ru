@@ -43,6 +43,7 @@ if (mysqli_num_rows($result_listion) == 0) {
                 <img 
                     src="<?php echo '/assets/img/works/' . $row["img"]; ?>" 
                     alt="<?php echo $row["img_alt"]; ?>"
+                    loading="lazy"
                     <?php if ($row["img_padding"] != null):  ?>class="not-full-size" style="padding: <?php echo($row["img_padding"]); ?>px 0;"<?php endif; ?> >
                 <div class="listing__header-box listing__header-box-work">
                     <?php $date_year = strtotime($row["date_start"]); ?>
