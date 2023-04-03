@@ -21,9 +21,9 @@ if (mysqli_num_rows($result_article) > 0) {
 
     <div class="post container">
         <h1><?php echo $article["title"]; ?></h1>
+        <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
 
         <?php if ($article["short_description"] != null) { ?>
-            <div class="spacer16"></div>
             <p><?php echo htmlspecialchars($article["short_description"]); ?></p>
         <?php } ?>
 
