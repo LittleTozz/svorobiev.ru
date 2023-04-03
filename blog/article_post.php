@@ -14,10 +14,20 @@ $sql_article = "SELECT blog_articles.id, blog_articles.title, blog_articles.cont
 $result_article = mysqli_query($conn, $sql_article);
 
 if (mysqli_num_rows($result_article) > 0) {
-
     $article = mysqli_fetch_assoc($result_article);
+
+    // Получение двух рандомных статей
+    $sql_two_random_articles = "SELECT blog_articles.title, blog_articles.url
+            FROM blog_articles 
+            WHERE id != " . $article["id"] . " AND in_active != 0
+            ORDER BY RAND() 
+            LIMIT 2";
+    $result_two_random_articles = mysqli_query($conn, $sql_two_random_articles);
+}
     
-    mysqli_close($conn); ?>
+mysqli_close($conn); 
+
+if (mysqli_num_rows($result_article) > 0) {?>
 
     <div class="post container">
         <h1><?php echo $article["title"]; ?></h1>
@@ -28,6 +38,20 @@ if (mysqli_num_rows($result_article) > 0) {
         <?php } ?>
 
         <p><?php echo $article["content"]; ?></p>
+        <?php
+        if ($result_two_random_articles != null) {
+            $count = 0;
+            echo("<div class='other_links'>");
+            while ($row = mysqli_fetch_array($result_two_random_articles)) {
+                if ($count == 0) {
+                    echo("<p><a href='" . $row["url"] ."'>← " . $row["title"] . "</a></p>");
+                    $count++;
+                } else if ($count == 1) {
+                    echo("<p><a href='" . $row["url"] ."'>" . $row["title"] . " →</a></p>");
+                }
+            }
+        }
+        ?>
     </div>
     <script>
     // Подключаем js файл, который у каждого тега <code> создает кнопку Copy

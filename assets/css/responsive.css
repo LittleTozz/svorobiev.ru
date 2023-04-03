@@ -101,6 +101,12 @@
     .not-full-size {
         padding: 20px 15px 0 15px !important;
     }
+    .other_links {
+        flex-wrap: wrap;
+    }
+    .other_links p:last-child {
+        margin-left: auto;
+    }
 }
 
 @media (max-width: 389px) {

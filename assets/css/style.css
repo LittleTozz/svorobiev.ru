@@ -170,3 +170,9 @@
     80% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+.other_links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
