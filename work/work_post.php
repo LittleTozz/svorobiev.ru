@@ -32,7 +32,7 @@ if (mysqli_num_rows($result_project) > 0) { ?>
         <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
         <p><?php echo $project["content"]; ?></p>
         <?php
-        if ($project["link_in_project"] != null) echo("<a href='https://svorobiev.ru/work/" . $project["link_in_project"] . "' target='_blank'>Ссылка на проект</a>");
+        if ($project["link_in_project"] != null) echo("<p><a href='https://svorobiev.ru/work/" . $project["link_in_project"] . "' target='_blank'>Ссылка на проект</a></p>");
         ?>
         <?php
         if ($result_two_random_works != null) {
