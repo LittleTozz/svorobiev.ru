@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: /work/discomagic/v2.0/
+Disallow: /work/discomagic/v1.0/
+Disallow: /work/practice_college/
