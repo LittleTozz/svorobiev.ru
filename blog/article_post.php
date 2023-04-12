@@ -44,10 +44,10 @@ if (mysqli_num_rows($result_article) > 0) {?>
             echo("<div class='other_links'>");
             while ($row = mysqli_fetch_array($result_two_random_articles)) {
                 if ($count == 0) {
-                    echo("<p><a href='" . $row["url"] ."'>← " . $row["title"] . "</a></p>");
+                    echo("<p><a href='" . $row["url"] ."'>←&nbsp;" . $row["title"] . "</a></p>");
                     $count++;
                 } else if ($count == 1) {
-                    echo("<p><a href='" . $row["url"] ."'>" . $row["title"] . " →</a></p>");
+                    echo("<p><a href='" . $row["url"] ."'>" . $row["title"] . "&nbsp;→</a></p>");
                 }
             }
         }

@@ -151,6 +151,7 @@ p {
 	margin-bottom: 0.75rem;
 	color: var(--text-light-clr);
     transition: 300ms;
+	text-align: justify;
 }
 
 p strong {
@@ -184,7 +185,7 @@ code {
     background-color: #fff6c0;
 }
 code::selection {
-    background-color: #fff;
+    background-color: #cec79b;
 }
 
 ol,

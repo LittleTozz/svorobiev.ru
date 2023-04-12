@@ -1,9 +1,9 @@
 <?php
 $current_url = $_SERVER['REQUEST_URI'];
 $menu_links = array(
-    "/blog" => "Пишу",
-    "/work" => "Работаю",
-    "/contact" => "Беседую"
+    "/blog" => "Блог",
+    "/work" => "Портфолио",
+    "/contact" => "Контакты"
 );
 ?>
 

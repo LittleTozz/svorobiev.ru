@@ -44,11 +44,10 @@
 }
 #my_foto img {
     width: 33.33%;
-    margin-bottom: 12px;
     transition: 200ms;
     z-index: 1;
 }
-#my_foto img:hover {
+#my_foto img:active {
     transform: scale(1.7);
     z-index: 2;
     transition: 200ms;
@@ -175,4 +174,8 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+.other_links p {
+    text-align: unset;
 }

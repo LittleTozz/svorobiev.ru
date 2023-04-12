@@ -36,7 +36,7 @@ if (mysqli_num_rows($result_listion) == 0) {
 ?>
 
 <main class="listing article">
-    <h1 class="container">Пишу в Блоге</h1>
+    <h1 class="container">Делюсь полезными советами</h1>
     <div class="spacer16"></div>
     <?php while($row = mysqli_fetch_assoc($result_listion)) { ?>
             <section>
