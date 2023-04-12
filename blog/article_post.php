@@ -9,7 +9,7 @@ require_once('../config/db_config.php');
 $sql_article = "SELECT blog_articles.id, blog_articles.title, blog_articles.content, blog_articles.short_description, blog_articles.date, blog_category.name, blog_articles.in_active
         FROM blog_articles
         JOIN blog_category ON blog_articles.id_category = blog_category.id
-        WHERE blog_articles.url = '" . $url . "'";
+        WHERE blog_articles.url = '" . $url . "' and blog_articles.in_active = '1'";
         
 $result_article = mysqli_query($conn, $sql_article);
 

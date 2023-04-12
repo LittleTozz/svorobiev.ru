@@ -22,7 +22,7 @@ require_once('../config/db_config.php');
 $sql_listion = "SELECT blog_articles.title, blog_articles.short_description, blog_articles.date, blog_articles.url, blog_articles.in_active, blog_category.name AS category_name
         FROM blog_articles 
         JOIN blog_category ON blog_articles.id_category = blog_category.id
-        -- WHERE blog_articles.in_active = '1'
+        WHERE blog_articles.in_active = '1'
         ORDER BY blog_articles.date DESC";
 
 $result_listion = mysqli_query($conn, $sql_listion);
