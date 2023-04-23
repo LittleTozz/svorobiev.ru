@@ -3,3 +3,6 @@
 RewriteEngine On
 RewriteBase /blog/
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+RewriteEngine On
+ErrorDocument 404 /404.php

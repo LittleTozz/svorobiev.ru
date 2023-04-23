@@ -28,6 +28,9 @@ if ($path == '/blog' || $path == '/blog/') {
         $title = $article["seo_title"];
         $description = $article["seo_description"];
     
+    } else {
+        $title = 'Ошибка 404. Страница не найдена';
+        $description = 'К сожалению, мы не смогли найти страницу, которую вы искали. Попробуйте проверить ссылку еще раз или перейдите на главную страницу. Мы приносим извинения за доставленные неудобства и надеемся, что вы найдете то, что искали на других страницах нашего сайта.';
     }
 }
 // Конец костыля
@@ -49,10 +52,15 @@ if ($path == '/blog' || $path == '/blog/') {
         include_once('article_listing.php');
 
     } else {
+        if (mysqli_num_rows($result_article) > 0) {
 
-        // Выводим одну статью
-        include_once('article_post.php');
+            // Выводим одну статью
+            include_once('article_post.php');
 
+        } else {
+            header('HTTP/1.0 404 Not Found');
+            include_once('../parts/include/404.php');
+        }
     }
     ?>
     <?php include_once('../parts/footer.php');?>

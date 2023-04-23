@@ -26,31 +26,27 @@ if (mysqli_num_rows($result_project) > 0) {
     
 mysqli_close($conn);
 
-if (mysqli_num_rows($result_project) > 0) { ?>
-    <div class="post container">
-        <h1><?php echo $project["name"]; ?></h1>
-        <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
-        <p><?php echo $project["content"]; ?></p>
-        <?php
-        if ($project["link_in_project"] != null) echo("<p><a href='https://svorobiev.ru/work/" . $project["link_in_project"] . "' target='_blank'>Ссылка на проект</a></p>");
-        ?>
-        <?php
-        if ($result_two_random_works != null) {
-            $count = 0;
-            echo("<div class='other_links'>");
-            while ($row = mysqli_fetch_array($result_two_random_works)) {
-                if ($count == 0) {
-                    echo("<p><a href='" . $row["url"] ."'>← " . $row["name"] . "</a></p>");
-                    $count++;
-                } else if ($count == 1) {
-                    echo("<p><a href='" . $row["url"] ."'>" . $row["name"] . " →</a></p>");
-                }
+?>
+
+<div class="post container">
+    <h1><?php echo $project["name"]; ?></h1>
+    <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
+    <p><?php echo $project["content"]; ?></p>
+    <?php
+    if ($project["link_in_project"] != null) echo("<p><a href='https://svorobiev.ru/work/" . $project["link_in_project"] . "' target='_blank'>Ссылка на проект</a></p>");
+    ?>
+    <?php
+    if ($result_two_random_works != null) {
+        $count = 0;
+        echo("<div class='other_links'>");
+        while ($row = mysqli_fetch_array($result_two_random_works)) {
+            if ($count == 0) {
+                echo("<p><a href='" . $row["url"] ."'>← " . $row["name"] . "</a></p>");
+                $count++;
+            } else if ($count == 1) {
+                echo("<p><a href='" . $row["url"] ."'>" . $row["name"] . " →</a></p>");
             }
         }
-        ?>
-    </div>
-<?php } else {
-    header("HTTP/1.0 404 Not Found");
-    header("Location: ../404.php");
-    exit();
-} ?>
+    }
+    ?>
+</div>

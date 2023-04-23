@@ -25,40 +25,35 @@ if (mysqli_num_rows($result_article) > 0) {
     $result_two_random_articles = mysqli_query($conn, $sql_two_random_articles);
 }
     
-mysqli_close($conn); 
+mysqli_close($conn);
 
-if (mysqli_num_rows($result_article) > 0) {?>
+?>
 
-    <div class="post container">
-        <h1><?php echo $article["title"]; ?></h1>
-        <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
+<div class="post container">
+    <h1><?php echo $article["title"]; ?></h1>
+    <p><a href="#" onclick="window.history.back();">👈 вернуться обратно</a></p>
 
-        <?php if ($article["short_description"] != null) { ?>
-            <p><?php echo htmlspecialchars($article["short_description"]); ?></p>
-        <?php } ?>
+    <?php if ($article["short_description"] != null) { ?>
+        <p><?php echo htmlspecialchars($article["short_description"]); ?></p>
+    <?php } ?>
 
-        <p><?php echo $article["content"]; ?></p>
-        <?php
-        if ($result_two_random_articles != null) {
-            $count = 0;
-            echo("<div class='other_links'>");
-            while ($row = mysqli_fetch_array($result_two_random_articles)) {
-                if ($count == 0) {
-                    echo("<p><a href='" . $row["url"] ."'>←&nbsp;" . $row["title"] . "</a></p>");
-                    $count++;
-                } else if ($count == 1) {
-                    echo("<p><a href='" . $row["url"] ."'>" . $row["title"] . "&nbsp;→</a></p>");
-                }
+    <p><?php echo $article["content"]; ?></p>
+    <?php
+    if ($result_two_random_articles != null) {
+        $count = 0;
+        echo("<div class='other_links'>");
+        while ($row = mysqli_fetch_array($result_two_random_articles)) {
+            if ($count == 0) {
+                echo("<p><a href='" . $row["url"] ."'>←&nbsp;" . $row["title"] . "</a></p>");
+                $count++;
+            } else if ($count == 1) {
+                echo("<p><a href='" . $row["url"] ."'>" . $row["title"] . "&nbsp;→</a></p>");
             }
         }
-        ?>
-    </div>
-    <script>
+    }
+    ?>
+</div>
+<script>
     // Подключаем js файл, который у каждого тега <code> создает кнопку Copy
     <?php include('./copy_code.js'); ?>
-    </script>
-<?php } else {
-    header("HTTP/1.0 404 Not Found");
-    header("Location: ../404.php");
-    exit();
-} ?>
+</script>
