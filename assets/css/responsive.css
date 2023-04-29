@@ -30,16 +30,20 @@
         left: -16px;
         border-radius: 0;
     }
+    .listing.works section.mini-work {
+        width: 100%;
+    }
     .listing__header-box {
         display: block;
         margin-bottom: 16px;
     }
     .listing__header-box h2 {
         max-width: 100%;
-        overflow: hidden;
         display: block;
-        white-space: pre;
         margin-left: 0;
+    }
+    .listing.works section.mini-work:nth-child(3n+3) {
+        text-align: left;
     }
     .listing__header-box time {
         display: none;

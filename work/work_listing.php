@@ -38,17 +38,20 @@ if (mysqli_num_rows($result_listion) == 0) {
     <h1 class="container">Мои последние работы</h1>
     <div class="spacer16"></div>
     <?php while($row = mysqli_fetch_assoc($result_listion)) { ?>
-        <section>
+        <section <?php if (!$row["img"]) echo "class='mini-work'"; ?>>
             <a href="<?php echo $row["url"]; ?>">
+                <?php if($row["img"]): ?>
                 <img 
                     src="<?php echo '/assets/img/works/' . $row["img"]; ?>" 
                     alt="<?php echo $row["img_alt"]; ?>"
                     loading="lazy"
                     <?php if ($row["img_padding"] != null):  ?>class="not-full-size" style="padding: <?php echo($row["img_padding"]); ?>px 0;"<?php endif; ?> >
+                <?php endif ?>
                 <div class="listing__header-box listing__header-box-work">
                     <?php $date_year = strtotime($row["date_start"]); ?>
                     <h2><?php echo $row["name"] . " (" . date("Y", $date_year) . ")"; ?></h2>
                 </div>
+                <?php if($row["img"]): ?>
                 <div class="listing__wrapper-short-description">
                     <?php
                         // Вывод короткого описания
@@ -71,6 +74,7 @@ if (mysqli_num_rows($result_listion) == 0) {
                         }
                     ?>
                 </div>
+                <?php endif ?>
                 <div class="listing__time-work">
                     <time datetime="<?php echo $row["date_start"]; ?>">
                         <?php
