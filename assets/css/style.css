@@ -124,6 +124,9 @@
     margin-top: 32px;
     margin-bottom: 20px;
 }
+.post img {
+    width: 100%;
+}
 .copy-button {
     padding: 0;
     height: 20px;
